@@ -7,3 +7,7 @@ project "boostsimd"
         includedirs "include/"
         flags "C++11"
     end)
+
+    zpm.uses {
+        "Zefiros-Software/Boost"
+    }

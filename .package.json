@@ -12,5 +12,14 @@
         "SIMD-UseAVX512F": false,
         "SIMD-UseNEON": false,
         "SIMD-UseNEONF": false
-    }
+    },
+    "requires": [
+       {
+            "name": "Zefiros-Software/Boost",
+            "version": "^1.61.0",
+            "options": {
+                "Filesystem": true
+            }
+       }
+    ]
 }
