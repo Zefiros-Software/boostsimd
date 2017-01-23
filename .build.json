@@ -1,6 +1,6 @@
 [
     {
-        "version": "@head",
+        "version": ">=4.16.0 || @head",
         "file": ".build.1.lua"
     }
 ]
