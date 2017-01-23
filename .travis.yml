@@ -1,0 +1,24 @@
+sudo: required
+language: generic
+matrix:
+    include:
+        # Use the built in venv for linux builds
+        - os: linux
+          dist: trusty          
+          env: VERSION=6
+        - os: linux
+          dist: trusty          
+          env: VERSION=5
+        # Use generic language for osx
+        - os: osx
+          osx_image: xcode8
+          language: generic
+
+install:
+    - bash script/install-unix.sh
+    - wget -O - https://raw.githubusercontent.com/Zefiros-Software/ZPM/master/script/install-zpm-travis.sh | bash
+script:
+    - bash script/travis-build.sh
+notifications:
+    slack:
+        secure: "B2jMpnqhjOw857jhj6/o+j1tW1NmAGpKS8cI/c3YS1w/moD7LlFVMI6uAa530s8Qefaad3I45h0tvl912mokzL2HBtsAExsglr8coj30yddOKSaeVIW5BvZHa29DAoKdTHlbbY8PrfT6w8DwFoc2cOOAo/xT504CwwWGkkjZWN7ftMEWKh9+90Aooq3KqF2X1Xh4nGeKxmOVKs8j/HW0lF3W817r7KOvsu0Vu6IJ2xHzkisvKgd8dk5+JKif0s0zfmpk1F3VfQwNXrM9Mj5s8W9EeDJQJBprCywaB8jaO42gj2alGm661XWSV1CrIsk7AaGjTlys9cXOeDQnLA4uVMWssWhRcMUVgE1QcRF28mTvrQeoQvMvb7TguKfdG7qtktnV2MkS1Xa/5IsKh/xeVMhmuK3N+zubZSblvyuQK5KPA0JCdmhTzeZFh1Ba7rUtdQyNuvfpw62aqHwFRhZu83nWLzI6seVKauJe0puocvbJAMZbpXIMoEjalXyuDYsqbLJdSSNqf7QXOLtTghQut3Z4qJ7YLNwhJ7y8vAhGzlCy5NpR7cpOH3vK3Zrdx1HCzyMjvH6qaNQi8GQeAnS8fAmb0aHwUMvmheIE+yVsroeFtL35Cq8uH6fUnWtB+FaosG42PaRkYyl8qD09ZAY7nHw+enpCstyuV+mjwENnaQI="

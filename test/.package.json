@@ -1,0 +1,10 @@
+{
+    "name": "Zefiros-Software/boostsimd-Dev",
+    "requires": [
+        {
+            "name": "Zefiros-Software/boostsimd",
+            "version": ">=4.16.12",
+            "buildpath": "../"
+        }
+    ]
+}
